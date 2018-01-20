@@ -21,12 +21,40 @@ De webservice voor de storingen en werkzaamheden maakt het mogelijk informatie o
 
 #####Fields#####
 
+id
+Traject
+Reden
+Periode
+Bericht
+Advies
+
 #####Voorbeeld code#####
 
 ####Reisadviezen####
 De webservice voor de reisadviezen maakt het mogelijk de NS Reisplanner aan te roepen voor een treinreis van een station naar een station. Een reisadvies bestaat uit meerdere reismogelijkheden, zodat de treinreiziger hier een keuze uit kan maken. Een reismogelijkheid bevat zowel geplande als actuele informatie.
 
 #####Fields#####
+AantalOverstappen
+ActueleVertrekTijd
+GeplandeAankomstTijd
+ActueleReisTijd
+GeplandeVertrekTijd
+GeplandeReisTijd
+Status
+ActueleAankomstTijd
+Optimaal
+ReisDeel
+- @reisSoort
+- Status
+- Vervoerder
+- VervoerType
+- RitNummer
+- ReisStop
+-- Naam
+-- Tijd
+-- Spoor
+--- #text
+--- @wijziging
 
 #####Voorbeeld code#####
 
@@ -36,12 +64,34 @@ De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op 
 
 #####Fields#####
 
+Code
+UICCode
+Synoniemen
+Type
+Land
+Lon
+Lat
+Namen
+- Lang
+- Middel
+- Kort
+
 #####Voorbeeld code#####
 
 ####Vertrektijden####
 De webservice voor de actuele vertrektijden maakt het mogelijk om voor een station een actueel overzicht op te vragen van alle vertrekkende treinen voor het komende uur.
 
 #####Fields#####
+
+RitNummer
+EindBestemming
+Vervoerder
+VertrekSpoor
+- #text
+- @wijziging
+RouteTekst
+VertrekTijd
+TreinSoort
 
 #####Voorbeeld code#####
 
@@ -85,5 +135,5 @@ De getoonde prijsinformatie is niet afkomstig van NS reizigers B.V. of een hiera
 
 
 ###Special thanks to####
-Stefan de Koninkm who gave me a complete new insight with his python api
+Stefan de Konink who gave me a complete new insight with his python api
 https://github.com/NS-API/Python-API
