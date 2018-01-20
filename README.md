@@ -1,12 +1,12 @@
-# README #
+# README
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+## What is this repository for?
 
 * This python3 module is for getting the NS Train times
 
-### How do I get set up? ###
+## How do I get set up?
 
 * Go To [NS API SIte](https://www.ns.nl/ews-aanvraagformulier/?0)
 * Subscribe for the NS API (It's free for 50.000 calls a day)
@@ -14,26 +14,27 @@ This README would normally document whatever steps are necessary to get your app
     * pip3 py_nsapi --upgrade (or pip py_nsapi --upgrade )
 * ready to use it!
 
-###API's###
+## API's
 The API's return the data in a Dictionary. You can loop through the Dict as any Dict.
 
 See examples about how to get information.
 
 All api's can write warnings, errors and debug information to log files
 
-Just use 
-'''
+Just use
+
+```python3
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
-'''
+```
 
 More information about [logging](https://docs.python.org/3/howto/logging.html)
 
 
-####Storingen####
+### Storingen
 De webservice voor de storingen en werkzaamheden maakt het mogelijk informatie op te vragen over storingen en/of werkzaamheden.
 
-#####Fields#####
+#### Fields
 
 - id
 - Traject
@@ -42,31 +43,26 @@ De webservice voor de storingen en werkzaamheden maakt het mogelijk informatie o
 - Bericht
 - Advies
 
-#####Example code#####
-'''
+#### Example code
+```python3
 from py_nsapi import storingen
-
 user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
-
 station = [a station, can be empty]
 actual = [true or false]
 unplanned = [true or false] #false = the oposite of what you think! :-) you get unplanned
-
 ns = reisadviezen(user,pwd)
-    
 ns = storingen(user,pwd)
-
 nsStoringen = ns.getData(station,  actual, unplanned)
-'''
+```
 
 nsStoringen is a Dict
 
 
-####Reisadviezen####
+### Reisadviezen
 De webservice voor de reisadviezen maakt het mogelijk de NS Reisplanner aan te roepen voor een treinreis van een station naar een station. Een reisadvies bestaat uit meerdere reismogelijkheden, zodat de treinreiziger hier een keuze uit kan maken. Een reismogelijkheid bevat zowel geplande als actuele informatie.
 
-#####Fields#####
+#### Fields
 - AantalOverstappen
 - ActueleVertrekTijd
 - GeplandeAankomstTijd
@@ -89,25 +85,21 @@ De webservice voor de reisadviezen maakt het mogelijk de NS Reisplanner aan te r
             - #text
             - @wijziging
 
-#####Example code#####
-'''
+#### Example code
+```python3
 from py_nsapi import reisadviezen
-
 user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
-
 ns = reisadviezen(user,pwd)
-    
 fromST  = "GS"
 toST    = "RTB"
-
 triplist = ns.getData(fromST, toST)
-'''
+```
 
-####Stationslijst####
+### Stationslijst
 De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op te vragen. 
 
-#####Fields#####
+#### Fields
 
 - Code
 - UICCode
@@ -121,8 +113,8 @@ De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op 
     - Middel
     - Kort
 
-#####Example code#####
-'''
+#### Example code
+```python3
 from py_nsapi import stations
 
 
@@ -131,12 +123,12 @@ pwd  = "yournotsoeasytoguesspassword"
 
 ns = stations(user, pwd)
 nsStations = ns.getData()
-'''
+```
 
-####Vertrektijden####
+### Vertrektijden
 De webservice voor de actuele vertrektijden maakt het mogelijk om voor een station een actueel overzicht op te vragen van alle vertrekkende treinen voor het komende uur.
 
-#####Fields#####
+#### Fields
 
 - RitNummer
 - EindBestemming
@@ -148,72 +140,64 @@ De webservice voor de actuele vertrektijden maakt het mogelijk om voor een stati
 - VertrekTijd
 - TreinSoort
 
-#####Example code#####
-'''
+#### Example code
+```python3
 from py_nsapi import vertrektijden
-
 user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
-
 ns = vertrektijden(user,pwd)
-
 fromST = "GS"
 triplist = ns.getData(fromST)
-'''
+```
 
 
-####Prijzen API#####
+### Prijzen API
 De webservice voor de prijzen maakt het mogelijk voor een treinreis de bijbehorende prijsinformatie op te vragen.
 
 Voor gebruik van de webservice is aparte autorisatie vereist. 
 Deze autorisatie wordt verleend na ontvangst van een getekend contract. 
 Dit contract is op te vragen via nsr.api@ns.nl.
 
-#####Fields#####
+#### Fields
 Soon!!!
 
 
-#####Example code#####
-'''
+#### Example code
+```python3
 from py_nsapi import prijzen
-
 user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
-
 ns = prijzen(user,pwd)
 
 SOON!!!!
-'''
+```
 
 
 
-
-
-### Who do I talk to? ###
+## Who do I talk to?
 
 * Theodorus van der Sluijs
 * theo@vandersluijs.nl
 
-### License ###
+## License
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
-####You are free to:####
+### You are free to:
 
 * Share — copy and redistribute the material in any medium or format
 * Adapt — remix, transform, and build upon the material
 
 -The licensor cannot revoke these freedoms as long as you follow the license terms.-
 
-####Under the following terms:####
+### Under the following terms:
 
 * Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 * NonCommercial — You may not use the material for commercial purposes.
 * ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
-###NS Disclaimer###
+## NS Disclaimer
 De getoonde prijsinformatie is niet afkomstig van NS reizigers B.V. of een hieraan gelieerde partij. Jegens NS Reizigers B.V. of daaraan gelieerde partijen, kunnne dan ook geen rechten worden ontleend met betrekking tot deze prijsinformatie
 
 
-###Special thanks to####
-Stefan de Konink who gave me a complete new insight with his python api
-https://github.com/NS-API/Python-API
+## Special thanks to
+Stefan de Konink who gave me a complete new insight with his [python api](https://github.com/NS-API/Python-API)
