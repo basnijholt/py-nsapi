@@ -8,92 +8,159 @@ This README would normally document whatever steps are necessary to get your app
 
 ### How do I get set up? ###
 
-* Go To https://www.ns.nl/ews-aanvraagformulier/?0
+* Go To [NS API SIte](https://www.ns.nl/ews-aanvraagformulier/?0)
 * Subscribe for the NS API (It's free for 50.000 calls a day)
 * Install this script with:
     * pip3 py_nsapi --upgrade (or pip py_nsapi --upgrade )
 * ready to use it!
 
 ###API's###
+The API's return the data in a Dictionary. You can loop through the Dict as any Dict.
+
+See examples about how to get information.
+
+All api's can write warnings, errors and debug information to log files
+
+Just use 
+'''
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+'''
+
+More information about [logging](https://docs.python.org/3/howto/logging.html)
+
 
 ####Storingen####
 De webservice voor de storingen en werkzaamheden maakt het mogelijk informatie op te vragen over storingen en/of werkzaamheden.
 
 #####Fields#####
 
-id
-Traject
-Reden
-Periode
-Bericht
-Advies
+- id
+- Traject
+- Reden
+- Periode
+- Bericht
+- Advies
 
-#####Voorbeeld code#####
+#####Example code#####
+'''
+from py_nsapi import storingen
+
+user = "yourusername"
+pwd  = "yournotsoeasytoguesspassword"
+
+station = [a station, can be empty]
+actual = [true or false]
+unplanned = [true or false] #false = the oposite of what you think! :-) you get unplanned
+
+ns = reisadviezen(user,pwd)
+    
+ns = storingen(user,pwd)
+
+nsStoringen = ns.getData(station,  actual, unplanned)
+'''
+
+nsStoringen is a Dict
+
 
 ####Reisadviezen####
 De webservice voor de reisadviezen maakt het mogelijk de NS Reisplanner aan te roepen voor een treinreis van een station naar een station. Een reisadvies bestaat uit meerdere reismogelijkheden, zodat de treinreiziger hier een keuze uit kan maken. Een reismogelijkheid bevat zowel geplande als actuele informatie.
 
 #####Fields#####
-AantalOverstappen
-ActueleVertrekTijd
-GeplandeAankomstTijd
-ActueleReisTijd
-GeplandeVertrekTijd
-GeplandeReisTijd
-Status
-ActueleAankomstTijd
-Optimaal
-ReisDeel
-- @reisSoort
+- AantalOverstappen
+- ActueleVertrekTijd
+- GeplandeAankomstTijd
+- ActueleReisTijd
+- GeplandeVertrekTijd
+- GeplandeReisTijd
 - Status
-- Vervoerder
-- VervoerType
-- RitNummer
-- ReisStop
--- Naam
--- Tijd
--- Spoor
---- #text
---- @wijziging
+- ActueleAankomstTijd
+- Optimaal
+- ReisDeel
+    - @reisSoort
+    - Status
+    - Vervoerder
+    - VervoerType
+    - RitNummer
+    - ReisStop
+        - Naam
+        - Tijd
+        - Spoor
+            - #text
+            - @wijziging
 
-#####Voorbeeld code#####
+#####Example code#####
+'''
+from py_nsapi import reisadviezen
 
+user = "yourusername"
+pwd  = "yournotsoeasytoguesspassword"
+
+ns = reisadviezen(user,pwd)
+    
+fromST  = "GS"
+toST    = "RTB"
+
+triplist = ns.getData(fromST, toST)
+'''
 
 ####Stationslijst####
 De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op te vragen. 
 
 #####Fields#####
 
-Code
-UICCode
-Synoniemen
-Type
-Land
-Lon
-Lat
-Namen
-- Lang
-- Middel
-- Kort
+- Code
+- UICCode
+- Synoniemen
+- Type
+- Land
+- Lon
+- Lat
+- Namen
+    - Lang
+    - Middel
+    - Kort
 
-#####Voorbeeld code#####
+#####Example code#####
+'''
+from py_nsapi import stations
+
+
+user = "yourusername"
+pwd  = "yournotsoeasytoguesspassword"
+
+ns = stations(user, pwd)
+nsStations = ns.getData()
+'''
 
 ####Vertrektijden####
 De webservice voor de actuele vertrektijden maakt het mogelijk om voor een station een actueel overzicht op te vragen van alle vertrekkende treinen voor het komende uur.
 
 #####Fields#####
 
-RitNummer
-EindBestemming
-Vervoerder
-VertrekSpoor
-- #text
-- @wijziging
-RouteTekst
-VertrekTijd
-TreinSoort
+- RitNummer
+- EindBestemming
+- Vervoerder
+- VertrekSpoor
+    - #text
+    - @wijziging
+- RouteTekst
+- VertrekTijd
+- TreinSoort
 
-#####Voorbeeld code#####
+#####Example code#####
+'''
+from py_nsapi import vertrektijden
+
+user = "yourusername"
+pwd  = "yournotsoeasytoguesspassword"
+
+ns = vertrektijden(user,pwd)
+
+fromST = "GS"
+triplist = ns.getData(fromST)
+'''
+
 
 ####Prijzen API#####
 De webservice voor de prijzen maakt het mogelijk voor een treinreis de bijbehorende prijsinformatie op te vragen.
@@ -103,8 +170,21 @@ Deze autorisatie wordt verleend na ontvangst van een getekend contract.
 Dit contract is op te vragen via nsr.api@ns.nl.
 
 #####Fields#####
+Soon!!!
 
-#####Voorbeeld code#####
+
+#####Example code#####
+'''
+from py_nsapi import prijzen
+
+user = "yourusername"
+pwd  = "yournotsoeasytoguesspassword"
+
+ns = prijzen(user,pwd)
+
+SOON!!!!
+'''
+
 
 
 
