@@ -4,8 +4,8 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 
-setup(name='py-nsapi',
-      version='0.1',
+setup(name='py_nsapi',
+      version='0.8',
       description='Python3 NS Train api script',
       url='https://bitbucket.org/tvdsluijs/py-nsapi',
       author='Theodorus van der Sluijs',
@@ -18,10 +18,8 @@ setup(name='py-nsapi',
           'Programming Language :: Python :: 3.5',
         ],
       keywords='trains transport train dutch ns',
-      packages=['py-nsapi'],
+      packages=['py_nsapi'],
       install_requires=[
-          'requests',
-          'logging',
           'xmltodict',
       ],      
       zip_safe=False)

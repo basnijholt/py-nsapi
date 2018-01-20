@@ -14,6 +14,12 @@
     * pip3 py_nsapi --upgrade (or pip py_nsapi --upgrade )
 * ready to use it!
 
+## Repository & Pypi
+You can find the Repro at [Bitbucket](https://bitbucket.org/tvdsluijs/py-nsapi/)
+
+and the install information on [Pypi](https://pypi.python.org/pypi/py-nsapi)
+
+
 ## API's
 The API's return the data in a Dictionary. You can loop through the Dict as any Dict.
 
