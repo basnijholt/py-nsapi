@@ -142,7 +142,7 @@ De webservice voor de actuele vertrektijden maakt het mogelijk om voor een stati
 - EindBestemming
 - Vervoerder
 - VertrekSpoor
-    - #text
+    - \#text
     - @wijziging
 - RouteTekst
 - VertrekTijd
