@@ -82,7 +82,7 @@ De webservice voor de reisadviezen maakt het mogelijk de NS Reisplanner aan te r
         - Naam
         - Tijd
         - Spoor
-            - #text
+            - \#text
             - @wijziging
 
 #### Example code
