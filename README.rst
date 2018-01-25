@@ -19,6 +19,15 @@ How do I get set up?
 
 -  ready to use it!
 
+Repository & Pypi
+-----------------
+
+You can find the Repro at
+`Bitbucket <https://bitbucket.org/tvdsluijs/py-nsapi/>`__
+
+and the install information on
+`Pypi <https://pypi.python.org/pypi/py-nsapi>`__
+
 API's
 -----
 

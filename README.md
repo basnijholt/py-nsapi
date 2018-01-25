@@ -4,7 +4,7 @@
 
 ## What is this repository for?
 
-* This python3 module is for getting the NS Train times
+* This python3 module is for easy usage of the the NS Train API
 
 ## How do I get set up?
 
@@ -12,6 +12,8 @@
 * Subscribe for the NS API (It's free for 50.000 calls a day)
 * Install this script with:
     * pip3 py_nsapi --upgrade (or pip py_nsapi --upgrade )
+    * or
+    * sudo -H pip3 py_nsapi --upgrade
 * ready to use it!
 
 ## Repository & Pypi
