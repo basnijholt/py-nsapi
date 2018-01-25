@@ -154,6 +154,7 @@ from py_nsapi import vertrektijden
 user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
 ns = vertrektijden(user,pwd)
+
 fromST = "GS"
 triplist = ns.getData(fromST)
 ```
@@ -167,7 +168,22 @@ Deze autorisatie wordt verleend na ontvangst van een getekend contract.
 Dit contract is op te vragen via nsr.api@ns.nl.
 
 #### Fields
-Soon!!!
+- @naam
+- Tariefeenheden
+- ReisType
+  - @naam
+  - ReisKlasse
+      - @klasse 
+      - Korting
+          - Kortingsprijs
+              - @name       
+              - @prijs
+          - Totaal
+          - Prijsdeel
+              - @naar
+              - @vervoerder
+              - van
+              - @prijs
 
 
 #### Example code
@@ -177,7 +193,15 @@ user = "yourusername"
 pwd  = "yournotsoeasytoguesspassword"
 ns = prijzen(user,pwd)
 
-SOON!!!!
+fromST = "GS"
+toST = "RTB"
+viaST = ""
+dateTime= ""
+data = ns.getData(fromST, toST, viaST, dateTime)
+
+elements = data['VervoerderKeuzes']
+print(elements) #dict
+
 ```
 
 

@@ -30,8 +30,7 @@ class prijzen(Trains):
 
             root = self.goFetch(url)
             
-            data = xmltodict.parse(root, dict_constructor=dict)
-            return data['VervoerderKeuzes']
+            return xmltodict.parse(root, dict_constructor=dict)
             
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
