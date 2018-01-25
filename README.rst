@@ -6,7 +6,7 @@ PY NS API
 What is this repository for?
 ----------------------------
 
--  This python3 module is for getting the NS Train times
+-  This python3 module is for easy usage of the the NS Train API
 
 How do I get set up?
 --------------------
@@ -16,6 +16,8 @@ How do I get set up?
 -  Install this script with:
 
    -  pip3 py\_nsapi --upgrade (or pip py\_nsapi --upgrade )
+   -  or
+   -  sudo -H pip3 py\_nsapi --upgrade
 
 -  ready to use it!
 
@@ -198,6 +200,7 @@ Example code
     user = "yourusername"
     pwd  = "yournotsoeasytoguesspassword"
     ns = vertrektijden(user,pwd)
+
     fromST = "GS"
     triplist = ns.getData(fromST)
 
@@ -214,7 +217,27 @@ contract is op te vragen via nsr.api@ns.nl.
 Fields
 ^^^^^^
 
-Soon!!!
+-  @naam
+-  Tariefeenheden
+-  ReisType
+-  @naam
+-  ReisKlasse
+
+   -  @klasse
+   -  Korting
+
+      -  Kortingsprijs
+
+         -  @name
+         -  @prijs
+
+      -  Totaal
+      -  Prijsdeel
+
+         -  @naar
+         -  @vervoerder
+         -  van
+         -  @prijs
 
 Example code
 ^^^^^^^^^^^^
@@ -226,7 +249,14 @@ Example code
     pwd  = "yournotsoeasytoguesspassword"
     ns = prijzen(user,pwd)
 
-    SOON!!!!
+    fromST = "GS"
+    toST = "RTB"
+    viaST = ""
+    dateTime= ""
+    data = ns.getData(fromST, toST, viaST, dateTime)
+
+    elements = data['VervoerderKeuzes']
+    print(elements) #dict
 
 Who do I talk to?
 -----------------
