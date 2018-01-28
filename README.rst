@@ -261,8 +261,8 @@ Example code
 Who do I talk to?
 -----------------
 
--  Theodorus van der Sluijs
--  theo@vandersluijs.nl
+-  Theodorus van der Sluijs (friends call me Theo)
+-  theodorus@vandersluijs.nl
 
 License
 -------

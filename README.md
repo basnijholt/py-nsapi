@@ -208,8 +208,8 @@ print(elements) #dict
 
 ## Who do I talk to?
 
-* Theodorus van der Sluijs
-* theo@vandersluijs.nl
+* Theodorus van der Sluijs (friends call me Theo)
+* theodorus@vandersluijs.nl
 
 ## License
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)

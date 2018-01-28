@@ -7,8 +7,9 @@ def readme():
 setup(name='py_nsapi',
       version='0.9.1',
       description='Python3 NS Train api script',
+      long_description=readme(),
       url='https://bitbucket.org/tvdsluijs/py-nsapi',
-      author='Theodorus van der Sluijs',
+      author='Theo van der Sluijs',
       author_email='theo@vandersluijs.nl',
       license='CC BY-NC-SA 4.0',
       classifiers=[
