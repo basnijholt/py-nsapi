@@ -1,7 +1,7 @@
 PY NS API
 =========
 
-|N\|Solid|
+`|N\|Solid| <https://www.ns.nl/reisinformatie/ns-api>`_
 
 What is this repository for?
 ----------------------------
@@ -11,7 +11,7 @@ What is this repository for?
 How do I get set up?
 --------------------
 
--  Go To `NS API SIte <https://www.ns.nl/ews-aanvraagformulier/?0>`__
+-  Go To `NS API SIte <https://www.ns.nl/ews-aanvraagformulier/?0>`_
 -  Subscribe for the NS API (It's free for 50.000 calls a day)
 -  Install this script with:
 
@@ -25,10 +25,10 @@ Repository & Pypi
 -----------------
 
 You can find the Repro at
-`Bitbucket <https://bitbucket.org/tvdsluijs/py-nsapi/>`__
+`Bitbucket <https://bitbucket.org/tvdsluijs/py-nsapi/>`_
 
 and the install information on
-`Pypi <https://pypi.python.org/pypi/py-nsapi>`__
+`Pypi <https://pypi.python.org/pypi/py-nsapi>`_
 
 API's
 -----
@@ -42,13 +42,13 @@ All api's can write warnings, errors and debug information to log files
 
 Just use
 
-.. code:: python3
+::
 
     import logging
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 
 More information about
-`logging <https://docs.python.org/3/howto/logging.html>`__
+`logging <https://docs.python.org/3/howto/logging.html>`_
 
 Storingen
 ~~~~~~~~~
@@ -69,7 +69,7 @@ Fields
 Example code
 ^^^^^^^^^^^^
 
-.. code:: python3
+::
 
     from py_nsapi import storingen
     user = "yourusername"
@@ -123,7 +123,7 @@ Fields
 Example code
 ^^^^^^^^^^^^
 
-.. code:: python3
+::
 
     from py_nsapi import reisadviezen
     user = "yourusername"
@@ -158,7 +158,7 @@ Fields
 Example code
 ^^^^^^^^^^^^
 
-.. code:: python3
+::
 
     from py_nsapi import stations
 
@@ -194,7 +194,7 @@ Fields
 Example code
 ^^^^^^^^^^^^
 
-.. code:: python3
+::
 
     from py_nsapi import vertrektijden
     user = "yourusername"
@@ -242,7 +242,7 @@ Fields
 Example code
 ^^^^^^^^^^^^
 
-.. code:: python3
+::
 
     from py_nsapi import prijzen
     user = "yourusername"
@@ -302,7 +302,6 @@ Special thanks to
 -----------------
 
 Stefan de Konink who gave me a complete new insight with his `python
-api <https://github.com/NS-API/Python-API>`__
+api <https://github.com/NS-API/Python-API>`_
 
 .. |N\|Solid| image:: https://www.ns.nl/static/generic/2.19.0/images/nslogo.svg
-   :target: https://www.ns.nl/reisinformatie/ns-api
