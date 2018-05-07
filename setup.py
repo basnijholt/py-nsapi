@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='py_nsapi',
-      version='0.9.1',
+      version='0.9.3',
       description='Python3 NS Train api script',
       long_description=readme(),
       url='https://bitbucket.org/tvdsluijs/py-nsapi',

@@ -1,7 +1,5 @@
 # PY NS API
 
-[![N|Solid](https://www.ns.nl/static/generic/2.19.0/images/nslogo.svg)](https://www.ns.nl/reisinformatie/ns-api)
-
 ## What is this repository for?
 
 * This python3 module is for easy usage of the the NS Train API
