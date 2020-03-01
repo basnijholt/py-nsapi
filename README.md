@@ -103,7 +103,7 @@ triplist = ns.get_data(fromST, toST)
 ```
 
 ### Stationslijst
-De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op te vragen. 
+De webservice voor de stationslijst maakt het mogelijk om alle stationsnamen op te vragen.
 
 #### Fields
 
@@ -161,8 +161,8 @@ triplist = ns.get_data(fromST)
 ### Prijzen API
 De webservice voor de prijzen maakt het mogelijk voor een treinreis de bijbehorende prijsinformatie op te vragen.
 
-Voor gebruik van de webservice is aparte autorisatie vereist. 
-Deze autorisatie wordt verleend na ontvangst van een getekend contract. 
+Voor gebruik van de webservice is aparte autorisatie vereist.
+Deze autorisatie wordt verleend na ontvangst van een getekend contract.
 Dit contract is op te vragen via nsr.api@ns.nl.
 
 #### Fields
@@ -171,10 +171,10 @@ Dit contract is op te vragen via nsr.api@ns.nl.
 - ReisType
   - @naam
   - ReisKlasse
-      - @klasse 
+      - @klasse
       - Korting
           - Kortingsprijs
-              - @name       
+              - @name
               - @prijs
           - Totaal
           - Prijsdeel

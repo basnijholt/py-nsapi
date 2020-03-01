@@ -23,6 +23,6 @@ setup(
     ],
     keywords="trains transport train dutch ns",
     packages=["py_nsapi"],
-    install_requires=["xmltodict",],
+    install_requires=["xmltodict"],
     zip_safe=False,
 )
