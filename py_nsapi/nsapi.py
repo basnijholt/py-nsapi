@@ -52,7 +52,7 @@ class Trains:
         except Exception as e:
             self._parse_exception(e)
 
-    def go_fetch(self, url):
+    def fetch(self, url):
 
         try:
             # get the data with authentication from NS API
@@ -95,7 +95,7 @@ class Prijzen(Trains):
                 date_time=date_time,
             )
 
-            root = self.go_fetch(url)
+            root = self.fetch(url)
 
             return xmltodict.parse(root, dict_constructor=dict)
 
@@ -111,7 +111,7 @@ class Vertrektijden(Trains):
             if self.is_not_empty(station):
                 # fetch the elements from the NS API
                 url = _DEPARTURE_TIMES.format(station)
-                root = self.go_fetch(url)
+                root = self.fetch(url)
 
                 # parse elements into dict
                 elements = xmltodict.parse(root, dict_constructor=dict)
@@ -122,7 +122,7 @@ class Vertrektijden(Trains):
                     return False
 
             else:
-                raise Exception("You should use a station")
+                raise Exception("You should use a `station`.")
 
         except Exception as e:
             self._parse_exception(e)
@@ -141,7 +141,7 @@ class Storingen(Trains):
                 unplanned=str(unplanned).lower(),
             )
 
-            root = self.go_fetch(url)
+            root = self.fetch(url)
 
             # parse elements into dict
             elements = xmltodict.parse(root, dict_constructor=dict)
@@ -191,7 +191,7 @@ class Reisadviezen(Trains):
             )
 
             # fetch the elements from the NS API
-            root = self.go_fetch(url)
+            root = self.fetch(url)
 
             # parse elements into dict
             elements = xmltodict.parse(root, dict_constructor=dict)
@@ -212,7 +212,7 @@ class Stations(Trains):
         try:
             # fetch the elements from the NS API
             url = _STATIONS
-            root = self.go_fetch(url)
+            root = self.fetch(url)
 
             # parse elements into dict
             elements = xmltodict.parse(root, dict_constructor=dict)
