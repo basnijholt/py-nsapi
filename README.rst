@@ -77,7 +77,7 @@ Example code
     unplanned = [true or false] #false = the oposite of what you think! :-) you get unplanned
     ns = reisadviezen(user,pwd)
     ns = storingen(user,pwd)
-    nsStoringen = ns.getData(station,  actual, unplanned)
+    nsStoringen = ns.get_data(station,  actual, unplanned)
 
 nsStoringen is a Dict
 
@@ -129,7 +129,7 @@ Example code
     ns = reisadviezen(user,pwd)
     fromST  = "GS"
     toST    = "RTB"
-    triplist = ns.getData(fromST, toST)
+    triplist = ns.get_data(fromST, toST)
 
 Stationslijst
 ~~~~~~~~~~~~~
@@ -165,7 +165,7 @@ Example code
     pwd  = "yournotsoeasytoguesspassword"
 
     ns = stations(user, pwd)
-    nsStations = ns.getData()
+    nsStations = ns.get_data()
 
 Vertrektijden
 ~~~~~~~~~~~~~
@@ -200,7 +200,7 @@ Example code
     ns = vertrektijden(user,pwd)
 
     fromST = "GS"
-    triplist = ns.getData(fromST)
+    triplist = ns.get_data(fromST)
 
 Prijzen API
 ~~~~~~~~~~~
@@ -251,7 +251,7 @@ Example code
     toST = "RTB"
     viaST = ""
     dateTime= ""
-    data = ns.getData(fromST, toST, viaST, dateTime)
+    data = ns.get_data(fromST, toST, viaST, dateTime)
 
     elements = data['VervoerderKeuzes']
     print(elements) #dict

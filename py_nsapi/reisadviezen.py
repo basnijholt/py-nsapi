@@ -16,7 +16,7 @@ class reisadviezen(Trains):
         class for fetching and parsing NS train advice data
     """
 
-    def getData(
+    def get_data(
         self,
         fromStation=None,
         toStation=None,
@@ -50,7 +50,7 @@ class reisadviezen(Trains):
             )
 
             # fetch the elements from the NS API
-            root = self.goFetch(url)
+            root = self.go_fetch(url)
 
             # parse elements into dict
             elements = xmltodict.parse(root, dict_constructor=dict)
@@ -63,12 +63,4 @@ class reisadviezen(Trains):
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-            logging.warning(
-                str(e)
-                + " | "
-                + str(exc_type)
-                + " | "
-                + str(fname)
-                + " | "
-                + str(exc_tb.tb_lineno)
-            )
+            logging.warning(f"{e} | {exc_type} | {fname} | {exc_tb.tb_lineno}")

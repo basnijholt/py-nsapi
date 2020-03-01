@@ -22,7 +22,7 @@ class prijzen(Trains):
         class for fetching and parsing NS train pricing data
     """
 
-    def getData(self, fromST=None, toST=None, viaST="", dateTime=""):
+    def get_data(self, fromST=None, toST=None, viaST="", dateTime=""):
         try:
             if fromST is None or toST is None:
                 raise Exception("You must provide a From and To station")
@@ -30,19 +30,11 @@ class prijzen(Trains):
             # fetch the elements from the NS API
             url = f"http://webservices.ns.nl/ns-api-prijzen-v3?from={fromST}&to={toST}&via={viaST}&dateTime={dateTime}"
 
-            root = self.goFetch(url)
+            root = self.go_fetch(url)
 
             return xmltodict.parse(root, dict_constructor=dict)
 
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-            logging.warning(
-                str(e)
-                + " | "
-                + str(exc_type)
-                + " | "
-                + str(fname)
-                + " | "
-                + str(exc_tb.tb_lineno)
-            )
+            logging.warning(f"{e} | {exc_type} | {fname} | {exc_tb.tb_lineno}")
