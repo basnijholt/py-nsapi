@@ -43,7 +43,10 @@ Just use
 .. code:: python3
 
     import logging
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+
+    logging.basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.DEBUG
+    )
 
 More information about
 `logging <https://docs.python.org/3/howto/logging.html>`__
@@ -70,14 +73,15 @@ Example code
 .. code:: python3
 
     from py_nsapi import storingen
+
     user = "yourusername"
-    pwd  = "yournotsoeasytoguesspassword"
-    station = [a station, can be empty]
-    actual = [true or false]
-    unplanned = [true or false] #false = the oposite of what you think! :-) you get unplanned
-    ns = reisadviezen(user,pwd)
-    ns = storingen(user,pwd)
-    nsStoringen = ns.get_data(station,  actual, unplanned)
+    pwd = "yournotsoeasytoguesspassword"
+    station = "a station"
+    actual = True  # [true or false]
+    unplanned = True  # [true or false] #false = the oposite of what you think! :-) you get unplanned
+    ns = reisadviezen(user, pwd)
+    ns = storingen(user, pwd)
+    nsStoringen = ns.get_data(station, actual, unplanned)
 
 nsStoringen is a Dict
 
@@ -124,11 +128,12 @@ Example code
 .. code:: python3
 
     from py_nsapi import reisadviezen
+
     user = "yourusername"
-    pwd  = "yournotsoeasytoguesspassword"
-    ns = reisadviezen(user,pwd)
-    fromST  = "GS"
-    toST    = "RTB"
+    pwd = "yournotsoeasytoguesspassword"
+    ns = reisadviezen(user, pwd)
+    fromST = "GS"
+    toST = "RTB"
     triplist = ns.get_data(fromST, toST)
 
 Stationslijst
@@ -162,7 +167,7 @@ Example code
 
 
     user = "yourusername"
-    pwd  = "yournotsoeasytoguesspassword"
+    pwd = "yournotsoeasytoguesspassword"
 
     ns = stations(user, pwd)
     nsStations = ns.get_data()
@@ -195,9 +200,10 @@ Example code
 .. code:: python3
 
     from py_nsapi import vertrektijden
+
     user = "yourusername"
-    pwd  = "yournotsoeasytoguesspassword"
-    ns = vertrektijden(user,pwd)
+    pwd = "yournotsoeasytoguesspassword"
+    ns = vertrektijden(user, pwd)
 
     fromST = "GS"
     triplist = ns.get_data(fromST)
@@ -243,18 +249,19 @@ Example code
 .. code:: python3
 
     from py_nsapi import prijzen
+
     user = "yourusername"
-    pwd  = "yournotsoeasytoguesspassword"
-    ns = prijzen(user,pwd)
+    pwd = "yournotsoeasytoguesspassword"
+    ns = prijzen(user, pwd)
 
     fromST = "GS"
     toST = "RTB"
     viaST = ""
-    dateTime= ""
+    dateTime = ""
     data = ns.get_data(fromST, toST, viaST, dateTime)
 
-    elements = data['VervoerderKeuzes']
-    print(elements) #dict
+    elements = data["VervoerderKeuzes"]
+    print(elements)  # dict
 
 Who do I talk to?
 -----------------
